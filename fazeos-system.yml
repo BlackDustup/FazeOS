@@ -1,0 +1,244 @@
+# FazeOS Configuration File
+# This YAML describes the OS structure and can be used to generate HTML/CSS/JS
+
+metadata:
+  title: "FazeOS - Космическая ОС"
+  version: "1.0"
+  author: "Your Name"
+  created: "2023-11-15"
+
+settings:
+  language: "ru"  # ru/en
+  theme: "dark"
+  accent_color: "#4dccff"
+  wallpaper: "https://images.unsplash.com/photo-1505506874110-6a7a69069a08?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80"
+  animations: true
+  neon_effects: true
+  transparency: 85
+
+user:
+  name: "Космический Исследователь"
+  avatar: "U"
+  email: "user@fazeos.com"
+  password: ""
+  registration_date: "today"
+
+desktop:
+  icons:
+    - name: "Проводник"
+      icon: "fas fa-folder"
+      app: "explorer"
+      position: [30, 30]
+    
+    - name: "Google"
+      icon: "fab fa-google"
+      app: "browser"
+      position: [30, 120]
+    
+    - name: "Kaspersky"
+      icon: "fas fa-shield-alt"
+      app: "antivirus"
+      position: [30, 210]
+    
+    - name: "Настройки"
+      icon: "fas fa-cog"
+      app: "settings"
+      position: [30, 300]
+    
+    - name: "Корзина"
+      icon: "fas fa-trash-alt"
+      app: "trash"
+      position: [30, 390]
+
+taskbar:
+  icons:
+    - icon: "fas fa-rocket"
+      action: "start_menu"
+    
+    - icon: "fas fa-folder"
+      app: "explorer"
+    
+    - icon: "fab fa-google"
+      app: "browser"
+    
+    - icon: "fas fa-shield-alt"
+      app: "antivirus"
+    
+    - icon: "fas fa-cog"
+      app: "settings"
+  
+  right_icons:
+    - icon: "fas fa-wifi"
+    
+    - icon: "fas fa-volume-up"
+    
+    - widget: "clock"
+      time_format: "HH:MM"
+      date_format: "D MMMM YYYY"
+
+start_menu:
+  search_placeholder: "Поиск в системе"
+  user_section: true
+  recommended:
+    - name: "Документы"
+      icon: "fas fa-folder"
+    
+    - name: "Изображения"
+      icon: "fas fa-image"
+  
+  apps:
+    - name: "Проводник"
+      icon: "fas fa-folder"
+      app: "explorer"
+    
+    - name: "Google"
+      icon: "fab fa-google"
+      app: "browser"
+    
+    - name: "Kaspersky"
+      icon: "fas fa-shield-alt"
+      app: "antivirus"
+    
+    - name: "Настройки"
+      icon: "fas fa-cog"
+      app: "settings"
+    
+    - name: "Корзина"
+      icon: "fas fa-trash-alt"
+      app: "trash"
+    
+    - name: "Блокнот"
+      icon: "fas fa-file-alt"
+      app: "notepad"
+    
+    - name: "Галерея"
+      icon: "fas fa-images"
+      app: "gallery"
+    
+    - name: "Время"
+      icon: "fas fa-clock"
+      app: "clock"
+    
+    - name: "Погода"
+      icon: "fas fa-cloud-sun"
+      app: "weather"
+
+windows:
+  explorer:
+    title: "Проводник"
+    size: [800, 500]
+    position: [200, 100]
+    resizable: true
+    structure:
+      sidebar:
+        sections:
+          - title: "Быстрый доступ"
+            items:
+              - name: "Главная"
+                icon: "fas fa-home"
+              
+              - name: "Рабочий стол"
+                icon: "fas fa-desktop"
+              
+              - name: "Загрузки"
+                icon: "fas fa-download"
+          
+          - title: "Этот компьютер"
+            items:
+              - name: "Локальный диск (C:)"
+                icon: "fas fa-hdd"
+              
+              - name: "Локальный диск (D:)"
+                icon: "fas fa-hdd"
+      
+      main:
+        path: ["Главная"]
+        files:
+          - name: "Документы"
+            type: "folder"
+            icon: "fas fa-folder"
+          
+          - name: "Изображения"
+            type: "folder"
+            icon: "fas fa-folder"
+          
+          - name: "readme.txt"
+            type: "file"
+            icon: "fas fa-file-alt"
+          
+          - name: "virus.exe"
+            type: "file"
+            icon: "fas fa-file-code"
+            dangerous: true
+
+  browser:
+    title: "Google"
+    size: [900, 600]
+    position: [150, 50]
+    default_url: "https://www.google.com"
+    bookmarks:
+      - name: "Google"
+        url: "https://www.google.com"
+      
+      - name: "YouTube"
+        url: "https://www.youtube.com"
+      
+      - name: "FreeRobux"
+        url: "freerobux"
+        dangerous: true
+
+virus:
+  name: "TomTom Virus"
+  effect: "bsod"
+  message: "ТомТом взломал вас! Бойтесь!"
+  activation_triggers:
+    - opening: "virus.exe"
+    - visiting: "freerobux"
+  behavior:
+    - show_hack_message
+    - glitch_effects
+    - trigger_bsod
+    - reload_system
+
+bsod:
+  title: ":("
+  message: "На вашем ПК возникла проблема, и его необходимо перезагрузить."
+  progress_text: "% завершено"
+  reload_delay: 2000
+
+styles: |
+  /* Основные стили системы */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    user-select: none;
+  }
+  
+  body {
+    background: linear-gradient(135deg, #0c0032, #190061, #240090, #3500d3);
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Сокращенная версия CSS - в реальном файле должен быть полный CSS */
+
+scripts: |
+  // Основные функции системы
+  function bootSystem() {
+    // Логика загрузки системы
+  }
+  
+  function openApp(app) {
+    // Логика открытия приложений
+  }
+  
+  function activateVirus() {
+    // Логика работы вируса
+  }
+  
+  // Остальные функции JS из оригинального кода
+
+# Конец файла конфигурации FazeOS
